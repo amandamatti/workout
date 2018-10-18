@@ -1,0 +1,133 @@
+//  Workout Log
+//  Amanda Matti 
+//  Webbutveckling III
+//  Mittuniversitetet 2018 
+
+@import "colors";
+@import "mediaqueries";
+
+.postform {
+    border: 1px solid red;
+}
+
+label > input { /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+
+  label > input + i { 
+    cursor:pointer;
+    border:2px solid transparent;
+    
+  }
+
+  label > input:checked + i { /* (RADIO CHECKED) icon style */
+    border:2px solid #f00;
+  }
+
+  i {
+    
+  }
+
+.container {
+    background-color: $swansdown;
+    width: 360px;
+    height: 100vh;
+    margin: 0px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4em;
+    color: $corn;
+    margin-top: 60px;
+}
+
+.wl-text {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: $corn;
+    font-size: 1.4em;
+}
+
+p {
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif,sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+form a:link {
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif,sans-serif;
+    font-size: 1.3em;
+    display: block;
+    max-width:  150px;
+    margin: 0px auto;
+    margin-top: 50px;
+    color: black;
+  
+}
+
+form a:hover {
+    background-color: $candlelight;   
+}
+
+form a:visited {
+    color: black;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif,sans-serif;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+button {
+    background-color: $greenhaze;
+    height: 50px;
+    color: white;
+    width: 50%;
+    display: block;
+    margin: 0px auto;
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif,sans-serif;
+    font-size: 1.1em;
+}
+
+/* Grid layout */
+
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 100%;  }
+.col-2 {width: 100%;  }
+.col-3 {width: 50%; }
+.col-4 {width: 50%; }
+.col-5 {width: 50%; }
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+    
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;   
+    margin-bottom: 5px;
+}
+
+
+

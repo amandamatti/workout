@@ -1,0 +1,56 @@
+
+body {
+    background-color: #D9EEE9;
+}
+
+
+
+
+h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    color: #E2A300;
+}
+
+p {
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif,sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+form {
+    border: 2px solid pink;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif,sans-serif;
+}
+
+button {
+    background-color: yellow;
+    
+    margin: 0px auto;
+}
+
+/* Grid layout */
+
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 100%;  }
+.col-2 {width: 100%;  }
+.col-3 {width: 50%; }
+.col-4 {width: 50%; }
+.col-5 {width: 50%; }
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+    
+}
+
+
+
