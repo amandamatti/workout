@@ -1,1 +1,0 @@
-<!-- Klassfil för att hantera träningspass -->

@@ -25,21 +25,27 @@
         </div> <!-- /row -->
         <div class="row">
             <div class="col-1">
-                <p>Välkommen till <span class="wl-text">WORKOUT LOG</span>. Stället där du enkelt kan hålla koll på alla
-                    dina träningspass.</p>
+                <p>Vill du skapa din egna träningsdagbok? Skapa en användare så är det bara
+                    att börja logga dina träningspass direkt.</p>
             </div> <!-- /col-1 -->
         </div> <!-- /row -->
         <div class="row">
             <div class="col-1">
-                <form name="login" action="index.php" method="POST">
-                    <input type="text" name="username" placeholder="Användarnamn">
-                    <input type="password" name="password" placeholder="Lösenord">
-                    <button type="submit" name="login">Logga in</button>
-                    <a href="newuser.html">Ny användare?</a>
+                <form name="register" class="register" method="POST" id="registerform">
+                    <input type="text" name="firstname" id="firstname" placeholder="Förnamn" required>
+                    <input type="text" name="lastname" id="lastname" placeholder="Efternamn" required>
+                    <input type="text" name="email" id="email" placeholder="E-post" required>
+                    <input type="text" name="username" id="username" placeholder="Användarnamn" required>
+                    <input type="password" name="password" id="password1" placeholder="Lösenord" onkeyup="checkPass(); return false;"
+                        required>
+                    <button type="submit" name="submit">Registrera dig</button>
+                    <div id="errormsg"></div>
                 </form>
-               
+
             </div> <!-- /col-1 -->
         </div> <!-- /row -->
-<?php
-    include("includes/footer.php");
-?>
+        <footer>&copy Amanda Matti 2018</footer>
+    </div> <!-- /container -->  
+    <script src="js/main.js"></script> 
+</body>
+</html>

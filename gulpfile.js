@@ -14,11 +14,12 @@ gulp.task("copyhtml", function() {
         .pipe(gulp.dest("pub/"))
 });
 
-/* Flytta och minifiera PHP-filer */
+/* Flytta PHP-filer */
 gulp.task("copyphp", function() {
-    return gulp.src("src/**/*.php")
+    return gulp.src("src/*.php")
         .pipe(gulp.dest("pub/"))
 });
+
 
 /* Sammanslå, flytta och minifiera CSS-filer */
 gulp.task("copycss", function() {

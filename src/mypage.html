@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title>Workout log</title>
+</head>
+
+<body>
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <header>
+                    <a href="index.html"><h1>Workout log</h1></a>
+                </header>
+                <div class="row">
+                    <div class="col-1">
+                        <p>Välkommen till <span class="wl-text">WORKOUT LOG</span>. 
+                        Stället där du enkelt kan hålla koll på alla dina träningspass.</p>
+                    </div> <!-- /col-1 -->
+                </div> <!-- /row -->
+            </div> <!-- /col-1 -->
+        </div> <!-- /row -->
+        <div class="row">
+            <div class="col-1">
+                <p>Har du tränat?
+                    Lägg till dina aktiviteter i listan för att
+                    se statistik över passen.</p>
+            </div> <!-- /col-1 -->
+        </div> <!-- /row -->
+        <div class="row">
+            <div class="col-1">
+                
+                    <h3>Lägg till pass:</h3>
+                    <form method='post' action='mypage.html' id='activityform'>
+                       <div class="row">
+                           <div class="col-3">
+                        <label for="date">Datum:</label>
+                        </div>
+                        <div class="col-4">
+                        <input type="text" id="date" placeholder="2018-10-18">
+                       </div>
+                       </div>
+
+                       <div class="row">
+                           <div class="col-3">
+                                <label for="activity">Aktivitet:</label>
+                           </div>
+                           <div class="col-4">
+                                <input type="text" id="activity" placeholder="">
+                           </div>
+                       </div>
+                        
+                       <div class="row">
+                            <div class="col-3">
+                                    <label for="time">Längd:</label>
+                            </div>
+                            <div class="col-4">
+                                    <input type="text" id="time" placeholder="1 h 10 min">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                                <div class="col-3">
+                                        <label for="feeling1">Känsla:</label>
+                                </div>
+                                <div class="col-4">
+                                        <label>
+                                                <input type="radio" value="verybad" name="feeling" id="feeling1">
+                                                <i class="far fa-frown fa-2x"></i>
+                                            </label>
+                    
+                                            <label>
+                                                <input type="radio" value="bad" name="feeling" id="feeling2">
+                                                <i class="far fa-meh fa-2x"></i>
+                                            </label>
+                                            <label>
+                                                <input type="radio" value="middle" name="feeling" id="feeling3">
+                                                <i class="far fa-meh-blank fa-2x"></i>
+                                            </label>
+                                            <label>
+                                                <input type="radio" value="good" name="feeling" id="feeling4">
+                                                <i class="far fa-smile fa-2x"></i>
+                                            </label>
+                                            <label>
+                                                <input type="radio" value="verygood" name="feeling" id="feeling5">
+                                                <i class="far fa-laugh fa-2x"></i>
+                                            </label>
+                                </div>
+                            </div>
+                        <div class="row">
+                            <div class="col-1">
+                        <button type='submit' name='publish'>Lägg till!</button>
+                    </div>
+                    </div>
+                    </form>
+            </div> <!-- /col-1 -->
+        </div> <!-- /row -->
+
+        <div class="row">
+                <div class="col-1">
+            <table id="workoutlist">
+                <tr>
+                    <th>Datum</th>
+                    <th>Aktivitet</th>
+                    <th>Längd</th>
+                </tr>
+                <tr>
+                    <td>2018-10-29</td>
+                    <td>Simning</td>
+                    <td>1 timme</td>
+                </tr>
+            </table>
+                </div> <!-- /col-1 -->
+            </div> <!-- /row -->
+
+        <footer>&copy; Amanda Matti 2018</footer>
+    </div> <!-- /container -->   
+</body>
+</html>
