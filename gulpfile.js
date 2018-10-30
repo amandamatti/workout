@@ -44,7 +44,7 @@ gulp.task("sass", function() {
 gulp.task("concminjs", function() {
     return gulp.src("src/js/*.js")
         .pipe(concat("main.min.js"))
-        .pipe(uglify())
+       // .pipe(uglify())
         .pipe(gulp.dest("pub/js"));
 });
 

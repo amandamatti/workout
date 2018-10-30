@@ -38,6 +38,9 @@
         </div> <!-- /row -->
         <div class="row">
             <div class="col-1">
+
+
+                
                 
                     <h3>Lägg till pass:</h3>
                     <form method='post' action='mypage.html' id='activityform'>
@@ -68,7 +71,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+         <!--             <div class="row">
                                 <div class="col-3">
                                         <label for="feeling1">Känsla:</label>
                                 </div>
@@ -95,10 +98,10 @@
                                                 <i class="far fa-laugh fa-2x"></i>
                                             </label>
                                 </div>
-                            </div>
+                            </div> -->
                         <div class="row">
                             <div class="col-1">
-                        <button type='submit' name='publish'>Lägg till!</button>
+                        <button id="add" type='submit' name='publish'>Lägg till!</button>
                     </div>
                     </div>
                     </form>
@@ -107,22 +110,30 @@
 
         <div class="row">
                 <div class="col-1">
-            <table id="workoutlist">
-                <tr>
-                    <th>Datum</th>
-                    <th>Aktivitet</th>
-                    <th>Längd</th>
-                </tr>
-                <tr>
-                    <td>2018-10-29</td>
-                    <td>Simning</td>
-                    <td>1 timme</td>
-                </tr>
-            </table>
+                    <table id="workoutlist">
+                        <tr>
+                            <th>Datum</th>
+                            <th>Aktivitet</th>
+                            <th>Längd</th>
+                        </tr>
+                            <tr>
+                                <td>2018-02-02</td>
+                                <td>Jogg</td>
+                                <td>4</td>
+                            </tr>
+                    </table>
                 </div> <!-- /col-1 -->
             </div> <!-- /row -->
 
+            <p>
+                    <input type="text" id="idno" placeholder="Id number" size="3" /><br />
+                    <input type="text" id="dateno" placeholder="Datum" /><br />
+                    <input type="text" id="activityno" placeholder="Aktivitet" /><br />
+                    <input type="text" id="timeno" placeholder="Längd" /><button id="update">Uppdatera</button>
+                </p>
+
         <footer>&copy; Amanda Matti 2018</footer>
     </div> <!-- /container -->   
+    <script src="js/main.min.js"></script>
 </body>
 </html>
