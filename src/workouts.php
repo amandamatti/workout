@@ -1,14 +1,14 @@
 <?php
 
 //    * DT173G - Webbutveckling III 
-//    * Main php-file
+//    * workouts.php
 //    * Mittuniversitetet 
 //    * Amanda Matti, 2018 
 
-// Database name: workout, Username: workout, Password: workout, Table: workouts 
-// ------------------------------------------------------------------------------------
+//  Database name: workout, Username: workout, Password: workout, Table: workouts 
+//  --------------------------------------------------------------------------------------
 // | ID (int, AI, PRIMARY KEY) | date (varchar(50)) | activity (varchar(50)) | time (int) |
-// 
+//  --------------------------------------------------------------------------------------
 //class App{
 //    public static function get__PATH_INFO($path){
 //        $path_elements = explode("/", $path);
@@ -31,7 +31,6 @@ if($request[0] != "workouts"){
 	exit();
 }
 
-//
 // Send return header information
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -39,9 +38,6 @@ header("Content-Type: application/json; charset=UTF-8");
 $conn = mysqli_connect("localhost","root") or die("Error connecting to database.");;
 $db_connected = mysqli_select_db($conn, "workout"); // Work with the database named 'testrest' 
 
-
-
-//
 // HTTP method implementations of GET, POST, PUT and DELETE
 switch ($method){
 	case "GET":
@@ -59,7 +55,7 @@ switch ($method){
    		break;
 }
 
-// Always response with json array of cars except for GET /cars/id
+// Always response with json array of cars except for GET /workouts/id
 $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
 $harr = [];

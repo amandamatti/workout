@@ -1,3 +1,9 @@
+//    * DT173G - Webbutveckling III 
+//    * gulpfile.js
+//    * Mittuniversitetet 
+//    * Amanda Matti, 2018 
+
+
 const gulp      = require("gulp");
 const concat    = require("gulp-concat");
 const uglify    = require("gulp-uglify");

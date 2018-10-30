@@ -3,18 +3,14 @@
 //    * Mittuniversitetet 
 //    * Amanda Matti, 2018 
 
-
-
-
 "use strict";
 
 var URL = "http://localhost/workout/pub/workouts.php/workouts"; //eventuellt ta bort /workouts
 
-//
 // DOM onload
 document.addEventListener("DOMContentLoaded", function(){ // Wait for DOM tree to get parsed
-  //
-  // Click on delete car button - DELETE
+
+  // Click on delete workout button - DELETE
     document.getElementById("workoutlist").addEventListener("click", function(ev){ 
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("DELETE", URL+"/"+ev.target.id, true);
@@ -44,7 +40,7 @@ document.getElementById("add").addEventListener("click", function(ev){
 })
 
 
- // Click on update car button - PUT
+// Click on update workout button - PUT
   document.getElementById("update").addEventListener("click", function(ev){
     let id = document.getElementById("idno").value;
     let brand = document.getElementById("dateno").value;
@@ -68,7 +64,7 @@ document.getElementById("add").addEventListener("click", function(ev){
 }) 
 
 
-// Show all cars in table - GET
+// Show all workouts in table - GET
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
@@ -79,7 +75,6 @@ xmlhttp.onreadystatechange = function() {
             for(var i=0; i < jsonData.length; i++){
 
                document.getElementById("workoutlist").innerHTML += "</td><td>"+jsonData[i].date+"</td><td>" + jsonData[i].activity + "</td><td>" + jsonData[i].time + "</td><td><button id='"+jsonData[i].ID+"'>Radera #"+jsonData[i].ID+"</button></td>";    
-   
             }
        }
        else if (xmlhttp.status == 400) {
