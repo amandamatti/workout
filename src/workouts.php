@@ -9,6 +9,7 @@
 //  --------------------------------------------------------------------------------------
 // | ID (int, AI, PRIMARY KEY) | date (varchar(50)) | activity (varchar(50)) | time (int) |
 //  --------------------------------------------------------------------------------------
+
 //class App{
 //    public static function get__PATH_INFO($path){
 //        $path_elements = explode("/", $path);
@@ -35,7 +36,7 @@ if($request[0] != "workouts"){
 header("Content-Type: application/json; charset=UTF-8");
 
 //$conn = mysqli_connect("localhost","workout", "password", "workouts") or die("Error connecting to database.");;
-$conn = mysqli_connect("localhost","root") or die("Error connecting to database.");;
+$conn = mysqli_connect("localhost","root") or die("Error connecting to database.");
 $db_connected = mysqli_select_db($conn, "workout"); // Work with the database named 'testrest' 
 
 // HTTP method implementations of GET, POST, PUT and DELETE
@@ -44,9 +45,9 @@ switch ($method){
 		$sql = "SELECT ID, date, activity, time FROM workouts";
 		if(isset($request[1])) $sql = $sql . " WHERE ID = " . $request[1] . ";";
 		break;
-	case "PUT":
-		$sql = "UPDATE workouts SET date = '" . $input['date'] . "', activity = '" . $input['activity'] . "', time = '" . $input['time'] . "' WHERE ID = " . $request[1] . ";";
-    	break;
+//	case "PUT":
+//		$sql = "UPDATE workouts SET date = '" . $input['date'] . "', activity = '" . $input['activity'] . "', time = '" . $input['time'] . "' WHERE ID = " . $request[1] . ";";
+//    	break;
 	case "POST":
 		$sql = "INSERT INTO workouts (date, activity, time) VALUES ('" . $input['date'] . "', '" . $input['activity'] . "', " . $input['time'] . ");";
 		break;
