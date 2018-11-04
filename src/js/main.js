@@ -10,7 +10,7 @@ var URL = "http://localhost/workout/pub/workouts.php/workouts";
 // DOM onload
 document.addEventListener("DOMContentLoaded", function(){ // Wait for DOM tree to get parsed
 
-  // Click on delete workout button - DELETE
+  // Click on radera-button - DELETE
     document.getElementById("workoutlist").addEventListener("click", function(ev){ 
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("DELETE", URL+"/"+ev.target.id, true);
@@ -39,34 +39,7 @@ document.getElementById("add").addEventListener("click", function(ev){
     }
 })
 
-
-// Click on update workout button - PUT
-//  document.getElementById("update").addEventListener("click", function(ev){
-//    let id = document.getElementById("idno").value;
-//    let brand = document.getElementById("dateno").value;
-//    let model = document.getElementById("activityno").value;
-//    let year = document.getElementById("timeno").value;
-//    if( !(id != '' && date != '' && activity != '' && time != '') ) location.reload();
-
-//    let json =  {"date": date, "activity": activity, "time": time};
-//    var xmlhttp = new XMLHttpRequest();
-//    xmlhttp.open("PUT", URL+"/"+id, true);
-//    xmlhttp.setRequestHeader('Content-Type', 'application/json');
-//    xmlhttp.send( JSON.stringify(json) );
-
-//     xmlhttp.onload = function() {
-    //      var jsonData = JSON.parse(this.responseText);
-    //      for(var i=0; i < jsonData.length; i++){
-    //                 document.getElementById("workouts").innerHTML += "<td>"+jsonData[i].ID+"</td><td>"+jsonData[i].Date+"</td><td>" + jsonData[i].Activity + "</td><td>" + jsonData[i].Time + "</td>";    
-    //      }
-//        location.reload();
-//    }  
-//}) 
-
-
-
-
-// Show all workouts in table - GET
+// Show all workouts in a table - GET
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
@@ -76,14 +49,14 @@ xmlhttp.onreadystatechange = function() {
             var jsonData = JSON.parse( xmlhttp.responseText );
             for(var i=0; i < jsonData.length; i++){
 
-               document.getElementById("workoutlist").innerHTML += "</td><td>"+jsonData[i].date+"</td><td>" + jsonData[i].activity + "</td><td>" + jsonData[i].time + "</td><td><button id='"+jsonData[i].ID+"'>Radera</button></td>";    
+               document.getElementById("workoutlist").innerHTML += "</td><tr><td>"+jsonData[i].date+"</td><td>" + jsonData[i].activity + "</td><td>" + jsonData[i].time + " min</td><td><button id='"+jsonData[i].ID+"'>Radera</button></td></tr>";    
             }
        }
        else if (xmlhttp.status == 400) {
-          alert('There was an error 400');
+          alert('Error 400');
        }
        else {
-           alert('something else other than 200 was returned');
+           alert('Något annat än 200 hände');
        }
     }
 };
@@ -92,3 +65,9 @@ xmlhttp.open("GET", URL, true);
 xmlhttp.send();
 
 }); 
+
+//Display todays date in .activityform
+document.querySelector("#date").valueAsDate = new Date();
+
+
+

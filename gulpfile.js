@@ -9,7 +9,6 @@ const concat    = require("gulp-concat");
 const uglify    = require("gulp-uglify");
 const cleanCSS  = require("gulp-clean-css");
 const watch     = require("gulp-watch");
-const imagemin  = require("gulp-imagemin");
 const concatcss = require("gulp-concat-css");
 const sass      = require("gulp-sass");
 const sourcemaps= require("gulp-sourcemaps") 
@@ -42,7 +41,6 @@ gulp.task("sass", function() {
         .pipe(sass().on("error", sass.logError))
         .pipe(sourcemaps.write()) 
         .pipe(concatcss("main.css"))
-        
         .pipe(gulp.dest("pub/css/"));
 }); 
 
@@ -52,13 +50,6 @@ gulp.task("concminjs", function() {
         .pipe(concat("main.min.js"))
        // .pipe(uglify())
         .pipe(gulp.dest("pub/js"));
-});
-
-/* Flytta och minifiera images */
-gulp.task("copyimg", function() {
-    return gulp.src("src/images/*")
-        .pipe(imagemin())
-        .pipe(gulp.dest("pub/images"));
 });
 
 /* Kontrollera ändringar i filsystemet */
@@ -79,14 +70,10 @@ gulp.task("watcher", function() {
         gulp.start("copycss")
     });
 
-    watch("src/images/*", function() {
-        gulp.start("copyimg");
-    });
-
     watch("src/scss/*", function() {
         gulp.start("sass");
     })
 
 });
 
-gulp.task("default", ["copyhtml", "copyphp", "copycss", "sass", "concminjs", "copyimg", "watcher"]);
+gulp.task("default", ["copyhtml", "copyphp", "copycss", "sass", "concminjs", "watcher"]);

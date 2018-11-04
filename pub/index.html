@@ -16,40 +16,95 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700" rel="stylesheet">
     <!-- Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
     <title>Workout log</title>
 </head>
 
 <body>
-        
+
     <div class="container">
         <div class="row">
             <div class="col-1">
                 <header>
-                    <a href="index.html"><h1>Workout log</h1></a>
+                    <a href="index.html">
+                        <h1>Workout log</h1>
+                    </a>
                 </header>
             </div> <!-- /col-1 -->
         </div> <!-- /row -->
         <div class="row">
             <div class="col-1">
-                <p>Välkommen till <span class="wl-text">WORKOUT LOG</span>. 
-                Stället där du enkelt kan hålla koll på alla dina träningspass.</p>
+                <p>Välkommen till <span class="wl-text">WORKOUT LOG</span>.
+                    Stället där du enkelt kan hålla koll på alla dina träningspass.</p>
+
             </div> <!-- /col-1 -->
         </div> <!-- /row -->
         <div class="row">
             <div class="col-1">
-                
-                <form name="login" action="mypage.html" method="POST" id="loginform">
-                    <input type="text" name="username" placeholder="Användarnamn">
-                    <input type="password" name="password" placeholder="Lösenord">
-                    <button type="submit" name="login">Logga in</button>
-                    <a href="newuser.html">Ny användare?</a>
-                </form>
-           
+                <p>Har du tränat?
+                    Fyll enkelt i vilken dag, vad för typ av aktivitet du utfört och hur lång tid du höll på i minuter.</p>
             </div> <!-- /col-1 -->
         </div> <!-- /row -->
-        <footer>&copy Amanda Matti 2018</footer>
-    </div> <!-- /container -->   
+        <div class="row">
+            <div class="col-1">
+
+                <h2>Lägg till pass:</h2>
+                <form name="activityform" method='post' action='index.html' id='activityform' onsubmit="return validateForm()">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="date">Datum:</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="date" id="date" value="2018-07-22" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="activity">Aktivitet:</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="activity" name="activity" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="time">Minuter:</label>
+                        </div>
+                        <div class="col-4">
+                            <input type="text" id="time" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <button id="add" type="submit">Lägg till!</button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- /col-1 -->
+        </div> <!-- /row -->
+
+        <div class="row">
+            <div class="col-1">
+                <table id="workoutlist">
+                    <tr>
+                        <th>Datum</th>
+                        <th>Aktivitet</th>
+                        <th>Minuter</th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div> <!-- /col-1 -->
+        </div> <!-- /row -->
+
+        <footer>&copy; Amanda Matti 2018</footer>
+    </div> <!-- /container -->
     <script src="js/main.min.js"></script>
 </body>
 </html>

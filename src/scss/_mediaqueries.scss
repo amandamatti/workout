@@ -2,3 +2,53 @@
 //    * _mediaqueries.scss
 //    * Mittuniversitetet 
 //    * Amanda Matti, 2018 
+
+/* RESPONSIVITET */
+
+/*800px eller mindre*/
+@media screen and (max-width: 800px) {
+    #workoutlist {
+        width: 100%;
+    }
+}
+
+/*550px eller mindre*/
+@media screen and (max-width: 550px) { 
+  /* Register new activity */
+    #activityform {
+
+        input[type=text] {
+            width: 100%;
+        }
+
+        input[type=date] {
+            width: 100%;
+        }
+
+        button {
+            width: 100px;
+        }
+    }
+
+    p {
+        width: 90%;
+    }
+
+    .col-1 {
+        padding-bottom: 50px;
+    }
+
+    /* Display activities in a table */
+    #workoutlist {
+        button {
+            width: 100px;
+        }
+    }
+}
+
+    /*403px eller mindre*/
+    @media screen and (max-width: 503px) { 
+    td {
+        font-size: 0.9em;
+    }
+}

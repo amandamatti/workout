@@ -3,22 +3,17 @@
 //    * Mittuniversitetet 
 //    * Amanda Matti, 2018 
 
-
+// import scss-files
 @import "colors";
 @import "fonts";
 @import "grid";
-@import "mediaqueries";
 @import "reset";
-
-
-.postform {
-    border: 1px solid red;
-}
 
 /* Basics */
 .container {
     background-color: $swansdown;
-    width: 360px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0px auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -32,9 +27,11 @@ h1 {
     margin-top: 60px;
 }
 
-h3 {
+h2 {
     font-family: $font_p;
     font-size: 1.2em;
+    text-align: center;
+    font-weight: 900;
 }
 
 .wl-text {
@@ -48,7 +45,10 @@ p {
     font-size: 1em;
     text-align: center;
     letter-spacing: 0.2px;
-    line-height: 1.5;
+    line-height: 1.8;
+    width: 100%;
+    max-width: 500px;
+    margin: 0px auto;
 }
 
 a {
@@ -60,67 +60,6 @@ footer {
     text-align: center;   
     padding: 50px 0 10px 0;
     font-family: $font_p;
-}
-
-/* Login form */
-#loginform {
-    a:link {
-        font-family: $font_p;
-        font-size: 1.3em;
-        display: block;
-        max-width:  150px;
-        margin: 0px auto;
-        margin-top: 50px;
-        color: black;
-    }
-
-    a:hover {
-        background-color: $candlelight;   
-    }
-
-    a:visited {
-        color: black;
-    }
-
-    input[type=text], input[type=password] {
-        width: 100%;
-        font-family: $font_p;
-        height: 50px;
-        margin-bottom: 10px;
-        padding-left: 20px;
-    }
-
-    button {
-        background-color: $greenhaze;
-        height: 50px;
-        color: white;
-        width: 50%;
-        display: block;
-        margin: 0px auto;
-        font-family: $font_p;
-        font-size: 1.1em;
-        margin-top: 30px;
-    }
-}
-
-/* mypage.php */
-/* Feelings */
-label {
-    input { 
-        visibility: hidden; 
-        position: absolute; 
-    }
-
-    input + i { 
-        cursor:pointer;
-        border:2px solid transparent;
-    }
-
-    input:checked + i {
-        background-color: $candlelight;
-        border-radius: 20px;
-        padding: 5%;
-    }
 }
 
 /* Register new activity */
@@ -137,70 +76,87 @@ label {
     }
 
     input[type=text] {
-        width: 100%;
+        width: 50%;
+        height: 50px;
+        padding-left: 20px;
+        resize: vertical;
+        font-family: $font_p;
+        
+    }
+
+    input[type=date] {
+        width: 50%;
         height: 50px;
         padding-left: 20px;
         resize: vertical;
         font-family: $font_p;
     }
 
-    input[type=number] {
-        width: 20%;
-        height: 50px;
-        padding-left: 20px;
-        resize: vertical;
-        font-family: $font_p;
-    }
-    
     label {
         padding: 20px 0 12px 0;
-        display: inline-block;
         font-family: $font_p;
+        float: right;
     }
 
     button {
         background-color: $greenhaze;
         height: 50px;
         color: white;
-        width: 50%;
+        width: 150px;
         display: block;
-        margin: 0px auto;
         font-family: $font_p;
         font-size: 1.1em;
     }
 
     button:hover {
         cursor: pointer;
+        background-color: $greenhaze_light;
     }
 }
 
 /* Display activities in a table */
 #workoutlist {
-    border: 1px solid salmon;
     font-family: $font_p;
-    width: 100%;
-    text-align: left;
+    width: 80%;
+    max-width: 960px;
+    margin: 0px auto;
 
     button {
         background-color: $corn;
-        height: 50px;
+        height: 40px;
+        width: 120px;
         color: white;
         display: block;
-        margin: 0px auto;
         font-family: $font_p;
         font-size: 1em;
     }
 
     button:hover {
-        background-color: black;
+        background-color: $corn_light;
         cursor: pointer;
     }
+
+    th {
+        height: 50px;
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 2%;
+        background-color: $greenhaze;
+        font-weight: 900;
+        color: white;
+    }
+
+    td {
+        width: 25%;
+        height: 50px;
+        vertical-align: middle;
+        padding-left: 2%;
+    }
+
+    tr {
+        background-color: $jetstream;
+    }
+    
 }
 
-/* Register new user 
-#registerform {
-    background-color: red;
-} */
-
-
-
+@import "mediaqueries";
